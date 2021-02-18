@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW3 Part 3">
+    <title>HW3.3 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script>
+    function processC() {
+            var ftemp, ctemp, ftempP;
+            
+            ftemp = document.getElementById("temp").value;
+            
+            if ( ftemp=="" || Number.isNaN(ftemp) )
+                    alert("Invalid input, please try again.");
+            
+            else {
+                ftempP = parseInt( ftemp );
+               
+                ctemp = 5 / 9 * (ftempP - 32)
+                
+                document.getElementById("results").value = (ftempP + " fahrenheit is " + Math.round( ctemp ) + " celcius")
+                
+            }
+        }
+    function processF() {
+            var ctemp, ftemp, ctempP;
+            
+            ctemp = document.getElementById("temp").value;
+            
+            if ( ctemp=="" || Number.isNaN(ctemp) )
+                    alert("Invalid input, please try again.");
+            
+            else {
+                ctempP = parseInt( ctemp );
+               
+                ftemp = (9/5 * ctempP) + 32;
+                
+                document.getElementById("results").value = (ctempP + " celsius is " + Math.round( ftemp ) + " fahrenheit")
+                
+            }
+        }
+        
+        function res()
+        {
+            document.getElementById("results").value = "";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 3: Part Three</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw3.html">HW3</a></td>
+                <td><a href="hw3a.html">Part 1</a></td>
+                <td><a href="hw3b.html">Part 2</a></td>
+                <td><a href="hw3c.html">Part 3</a></td>
+                <td><a href="hw3d.html">Part 4</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> The user will be allowed to enter a number in one input box you will provide. You will also provide two buttons: one to convert from Celsius to Farenheit and another button to convert from Farenheit to Celsius. Your form should have another input box or textarea that the user will not allowed to write anything as that's where you will put the result.
+                 <br><br>
+                When the user clicks on one of those buttons, you need to convert the temperature entered by the user, using the right function to convert from C to F or from F to C.
+                <br><br>
+                <span class="sol">Solution:</span></td>
+            </tr>
+        </table>
+        <table class="parts">
+                <tbody>
+                    <tr>
+                        <td>Temperature:</td>
+                        <td><input type="number" id="temp"></td>
+                    </tr>
+                    <tr><td></td>
+                    <td>
+                        <input type="button" value="Convert to &#8451;" onclick="processC();">
+                        <input type="button" value="Convert to &#8457;" onclick="processF();">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><textarea rows="5" cols="35" id="results" name="results" readonly></textarea></td>
+                </tr>
+                </tbody>
+            </table>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

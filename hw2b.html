@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW2 Part 2">
+    <title>HW2.2 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script>
+        function process()
+            {
+
+                var number1, number2, number3, n1, n2, n3;
+                number1 = document.forms["myform"].elements["num1"].value;
+                number2 = document.forms["myform"].elements["num2"].value;
+                number3 = document.forms["myform"].elements["num3"].value;
+                
+                if ( isNaN(number1) || isNaN(number2) || isNaN(number3) ||
+                    number1=="" || number2=="" || number3=="" ) {
+                        alert("Input must be numeric. Please try again.");
+                }
+                else {        
+                n1 = parseInt(number1);
+                n2 = parseInt(number2);
+                n3 = parseInt(number3);
+                        
+                sum = n1 + n2 + n3;
+                average = ( n1 + n2 + n3 ) / 3;
+                product = n1 * n2 * n3;
+                small = Math.min( n1, n2, n3 );
+                big = Math.max( n1, n2, n3 );
+                
+                document.getElementById("result").value = ("The sum of the numbers were " + sum +
+                "\nThe average was " + average +
+                "\nThe product was " + product +
+                "\nThe smallest number was " + small +
+                "\nThe largest number was " + big)
+        }
+       }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("textarea").fadeTo("slow", 0.15);
+            });
+        });
+    </script>
+</head>
+<body onload="document.getElementById('num1').focus();">
+    <header>
+        <h1>Homework 2: Part Two</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw2.html">HW2</a></td>
+                <td><a href="hw2a.html">Part 1</a></td>
+                <td><a href="hw2b.html">Part 2</a></td>
+                <td><a href="hw2c.html">Part 3</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Create a webpage that contains a script that inputs three integers via form text boxes and displays the sum, average, and product of the three integers, and the smallest and largest of the three integers. Your results should be displayed using a form textarea or a div element.
+                <br><br>
+                Define a 'Click to Fade Results' button on the form. Use jQuery to define a ready handler that defines a click event handler for the button.
+                <br><br>
+                <span class="sol">Solution:</span></td>
+            </tr>
+        </table>
+        <br>
+        <form id="myform" name="myform">
+            <table class="parts">
+                <tr>
+                    <td>1st Number:</td>
+                    <td>
+                        <input type="text" name="num1" id="num1" autofocus>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2nd Number:</td>
+                    <td>
+                        <input type="text" name="num2" id="num2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3rd Number:</td>
+                    <td>
+                        <input type="text" name="num3" id="num3">
+                    </td>
+                </tr>
+                <tr><td></td>
+                    <td>
+                        <input type="button" onclick="process()" value="SUBMIT">
+                        <input type="reset" value="RESET" onclick="document.getElementById('num1').focus();">
+                        <button type="button">Fade Results</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Results:
+                    </td>
+                    <td><textarea rows="7" cols="40" id="result" name="result" readonly></textarea></td>
+                </tr>
+            </table>
+        </form>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW4 Part 1a + 1b">
+    <title>HW4.1 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $( "#draggable" ).draggable();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 4: Part One</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw4.html">HW4</a></td>
+                <td><a href="hw4a.html">Part 1</a></td>
+                <td><a href="hw4b.html">Part 2</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Part 1a. Create a webpage that contains a script, using the for statement, that calculates the product and sum of every fourth integer from 5 to 21 inclusive and then displays the results, along with some accompanying text.
+                <br><br>
+                <span class="sol">Solution:</span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <script>
+            var sum = 0, product = 1;
+            
+            for ( var number = 5; number <= 21; number += 4 )
+                {
+                    sum += number;
+                    product *= number;
+                }
+            
+            document.write( "The sum of every 4th integer from 5 to 21 is " + sum + "<br>");
+            
+            document.write( "The product of every 4th integer from 5 to 21 is " + product );
+        </script>
+        <br>
+        <br>
+        <table id="draggable" class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Part 1b. create a script, using the while or do while statement, that calculates the product and sum of every third integer from 3 to 21 inclusive an then displays the results, along with some accompanying text.
+                <br><br>
+                <span class="sol">Click and Drag this box!!</span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <script>
+            var product = 1, x = 3, sum = 0;
+            
+            while (x <=21 ) {
+                product *= x;
+                sum += x;
+                x += 3;
+            }
+            
+            document.write( "The product of every 3rd integer from 3 to 21 is " + product + "<br>");
+           
+            document.write( "The sum of every 3rd integer from 3 to 21 is " + sum);
+        </script>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

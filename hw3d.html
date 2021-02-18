@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW3 Part 4">
+    <title>HW3.4 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script>
+        function randNum(){
+        var number1 = Math.floor(Math.random() * 10);
+        number2 = Math.floor(Math.random() * 10);
+        document.getElementById("num1").value = number1;
+        document.getElementById("num2").value = number2;
+        }
+        function checkAnswer() {
+            var answ = document.getElementById("answer").value,
+            numbera = document.getElementById("num1").value,
+            numberb = document.getElementById("num2").value;
+            if (Number.isNaN(answ) || answ=="" )
+            {
+                document.getElementById("result").innerHTML = ("Please enter a valid number");
+            }
+            else {
+                answP = parseInt( answ );
+                
+                if ( answP == ( numbera * numberb))
+                    document.getElementById("result").innerHTML = ("Very Good!");
+                else 
+                    document.getElementById("result").innerHTML = ("No, please try again.");
+            }
+        }
+        function res()
+        {
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("answer").value = '';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 3: Part Four</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw3.html">HW3</a></td>
+                <td><a href="hw3a.html">Part 1</a></td>
+                <td><a href="hw3b.html">Part 2</a></td>
+                <td><a href="hw3c.html">Part 3</a></td>
+                <td><a href="hw3d.html">Part 4</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Write a program that will help an elementary school student learn multiplication. Use Math.random to produce two one-digit integers (0-9). It should then display a question such as: "How much is 6 times 7?"
+                <br><br>
+                The student then types the answer into an input box. Your program checks the student's answer. If it is correct, display the message "Very good!" in a text area or another part of the page, and then prompt the user to see whether they wish to continue by using the confirm statement. If true, then generate a new question. If not, then exit the script and do not present another question.
+                <br><br>
+                <span class="sol">Solution:</span></td>
+            </tr>
+        </table>
+        <br>
+        <form id="myform" name="myform">
+            <table class="parts">
+                <tr>
+                    <td>
+                    <input type="button" onclick="randNum(); res()" value="Generate Question">
+                    </td>
+                </tr>
+                <tr>
+                    <td>What is
+                        <input type="number" name="num1" id="num1" readonly>
+                        *
+                        <input type="number" name="num2" id="num2" readonly>
+                        ?
+                    </td>
+                </tr>
+                <tr>
+                    <td>Your Answer:
+                    <input type="number" name="answer" id="answer">
+                    <input type="button" onclick="checkAnswer()" value="Check">
+                    <input type="reset" value="Reset" onclick="res()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="result"></div>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

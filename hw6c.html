@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW6 Part 3">
+    <title>HW6.3 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/digitalBush/jquery.maskedinput/1.4.1/dist/jquery.maskedinput.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            jQuery(function($){
+                $("#phone").mask("(999) 999-9999");
+            });
+        });
+        
+        function splitNumber(){
+            if ($("#myForm").valid()){
+                var phone = $('#phone').val();
+                var tokens = phone.split(/[\()-]+/);
+                
+                $('#areaCode').val(tokens[1]);
+                $('#firstPhone').val(tokens[2]);
+                $('#lastPhone').val(tokens[3]);
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 6: Part Three</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw6.html">HW6</a></td>
+                <td><a href="hw6a.html">Part 1</a></td>
+                <td><a href="hw6b.html">Part 2</a></td>
+                <td><a href="hw6c.html">Part 3</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Input a telephone number as a string in the format (999) 999-9999. The script should use String method split to extract the area code as a token, the first 3 digits of the phone number as a token, and the last 4 digits of the phone number as a token. Display the area code in one text box, the first 3 digits of the phone number in another text box, and the last 4 digits of the phone number in a third text box.
+                <br><br>
+                <span class="sol">Solution:</span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <form name="myForm" id="myForm" novalidate="novalidate">
+            <table class="parts space">
+                <tbody>
+                    <tr>
+                        <td>Enter a Phone #<br>(ex: (123) 456-7890)</td>
+                        <td>
+                            <input name="phone" type="text" id="phone" aria-invalid="false" class="valid"><br><br>
+                            <input type="button" value="Split the Number" onclick="splitNumber()">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Area Code:</td>
+                        <td>
+                            <input id="areaCode" type="text" name="areaCode" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>First 3 digits of #:</td>
+                        <td>
+                            <input id="firstPhone" type="text" name="firstPhone" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Last 4 digits of #:</td>
+                        <td>
+                            <input type="text" id="lastPhone" name="lastPhone" readonly>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="reset" value="Reset">
+        </form>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

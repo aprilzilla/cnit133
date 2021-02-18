@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW5 Part 1">
+    <title>HW5.1 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script>
+        
+    function validate()
+        {
+            var errName = "Please name your sandwich";
+            var errBread = "Please select your bread";
+            var errTop = "Please select at least one topping";
+            var errCon = "Please choose a condiment";
+            x = 0;
+            
+            var nameSando = document.getElementById("name").value;
+            
+            if (nameSando == "" || nameSando == null)
+                {
+                    document.getElementById("msg").innerHTML = errName;
+                    x = 1;
+                }
+            
+            var breadChoice = false;
+            
+            for (var i = 0; i < 2; ++i) {
+                if (document.myform.bread[i].checked) {
+                    breadChoice = true;
+                    break;
+                }
+            }
+            
+            if (breadChoice == false) {
+                document.getElementById("msg").innerHTML = errBread;
+                x = 1;
+            }
+            
+            var toppings = false;
+            
+            for (var i = 0; i < 4; ++i) {
+                if (document.myform.topping[i].checked) {
+                    toppings = true;
+                    break;
+                }
+            }
+            
+            if (toppings == false) {
+                document.getElementById("msg").innerHTML = errTop;
+                x = 1;
+            }
+            
+            var condiments = document.forms["myform"].elements["con"].selectedIndex;
+            
+            if (condiments < 1 )
+                {
+                    document.getElementById("msg").innerHTML = errCon;
+                    x = 1;
+                }
+            
+            if ( x == 0 )
+                {
+                    document.getElementById("msg").innerHTML = "Order Recieved. Thank you!"
+                }
+        }
+    function res()
+        {
+            document.getElementById("msg").innerHTML = " ";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 5: Part One</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw5.html">HW5</a></td>
+                <td><a href="hw5a.html">Part 1</a></td>
+                <td><a href="hw5b.html">Part 2</a></td>
+                <td><a href="hw5c.html">Part 3</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Create a webpage containing a form that displays an input text box, radio buttons, checkboxes, and select items; along with a script that executes form validation.
+                <br><br>
+                <span class="sol">Solution:</span>
+                </td>
+            </tr>
+        </table>
+        <form id="myform" name="myform">
+            <table class="parts">
+                <tbody>
+                    <tr>
+                        <td>Enter your sandwich name:</td>
+                        <td>
+                            <input type="text" name="name" id="name" autofocus>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Select your Bread:</td>
+                        <td>
+                            <input type="radio" id="white" value="white" name="bread">White
+                            <input type="radio" id="wheat" value="wheat" name="bread">Wheat
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Add your Toppings:</td>
+                        <td>
+                            <input type="checkbox" id="top1" name="topping" value="meat">Meat
+                            <input type="checkbox" id="top2" value="cheese" name="topping">Cheese
+                            <input type="checkbox" id="top3" value="pickles" name="topping">Pickles
+                            <input type="checkbox" id="top4" value="greens" name="topping">Greens
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose Condiment:</td>
+                        <td>
+                            <select name="con" id="con">
+                                <option value>--Choose One--</option>
+                                <option value="mayo">Mayo</option>
+                                <option value="mustard">Mustard</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" value="Submit" onclick="validate();">
+                            <input type="reset" value="Reset" onclick="window.location.reload();">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div id="msg"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <br>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

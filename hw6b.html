@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW6 Part 2">
+    <title>HW6.2 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script>
+        function searchInput()
+        {
+            var count = 0;
+            var searchedLetter = document.getElementById("inputLetter").value.toLowerCase().charAt( 0 );
+            var searchedLetter = searchedLetter.toLowerCase();
+            
+            var stringToSearch = document.getElementById("input").value;
+            var stringToSearch = stringToSearch.toLowerCase();
+            
+            for (i=0; i < stringToSearch.length; i++)
+                {
+                    if (stringToSearch.charAt(i) == searchedLetter)
+                        count++;
+                }
+            if ( count == 0 ) 
+            {
+                var errWindow = window.open("", "new_window", "top=220, left=50, width=300, height=100");
+                errWindow.focus();
+                errWindow.document.write("The character '" + searchedLetter + "' was not found in the text string, please search again.");
+                document.getElementById("output").value = " ";
+                
+            }
+            else
+                document.getElementById("output").value = "There was " + count + " occurence(s) of '" + searchedLetter + "' found!";
+        }
+        function res()
+        {
+            document.getElementById("input").innerHTML="";
+            document.getElementById("inputLetter").innerHTML="";
+            document.getElementById("output").innerHTML="";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 6: Part Two</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw6.html">HW6</a></td>
+                <td><a href="hw6a.html">Part 1</a></td>
+                <td><a href="hw6b.html">Part 2</a></td>
+                <td><a href="hw6c.html">Part 3</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Create a webpage that contains a script using a form that allows the user to input several lines of text and a search character and uses the String method charAt to determine the number of occurrences of the searched character within the text. Use a form textarea for the text and a form input box for the search character. If the search character is found within the text, display the number of occurrences of the searched character.
+                <br><br>
+                <span class="sol">Solution:</span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <form name="myForm">
+            <table class="parts space">
+                <tr>
+                    <td>
+                        Type a few words or sentences below<br>(upper or lowercase is acceptable):
+                        <br>
+                        <textarea id="input" name="input" rows="7" cols="40"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Search the above text for a specific character:
+                        <br>
+                        <input type="text" id="inputLetter">
+                        <input type="button" value="Search" onclick="searchInput();">
+                        <input type="reset" value="Reset" onclick="res();">
+                        <br>
+                        <div id="errOut"></div>
+                        <br>
+                        <textarea id="output" name="output" rows="10" cols="40" readonly></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

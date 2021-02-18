@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW5 Part 3">
+    <title>HW5.3 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script>
+    var stateArray = [ ["AL", "ALABAMA", "Montgomery", "4,887,871"],
+                       ["AK", "ALASKA", "Juneau", "737,438"],
+                       ["AZ", "ARIZONA", "Phoenix", "7,171,646"],
+                       ["AR", "ARKANSAS", "Little Rock", "3,010,825"],
+                       ["CA", "CALIFORNIA", "Sacramento", "39,557,045"],
+                       ["CO", "COLORADO", "Denver", "5,694,564"] ];
+        
+        function stateinfo()
+        {
+            var searchState = document.forms["census"].elements["inputState"].value;
+            searchState = searchState.toUpperCase();
+            
+            var found = false;
+            for (var row = 0; row < stateArray.length; row++)
+                {
+                    if ((stateArray[row][0] == searchState) || (stateArray[row][1] == searchState))
+                        {
+                            document.forms["census"].elements["result"].value = ("Here is the info requested: " + "\nState abbreviation: " + stateArray[row][0] + "\nState Name: " + stateArray[row][1] + "\nCapital: " + stateArray[row][2] + "\nPopulation: " + stateArray[row][3]);
+                            row = stateArray.length;
+                            found = true;
+                        }
+                }
+            if ( found == false ) {
+                document.forms["census"].elements["result"].value = "State not found, please enter a valid state or abbreviation.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 5: Part Three</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw5.html">HW5</a></td>
+                <td><a href="hw5a.html">Part 1</a></td>
+                <td><a href="hw5b.html">Part 2</a></td>
+                <td><a href="hw5c.html">Part 3</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Create a webpage that enables the user to enter a state name and have the State Name, State Capital, and population appear in separate input box or textarea. The user should be able to start the script by pressing the button, "State Info".
+                <br><br>
+                <span class="sol">Solution:</span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <table class="parts">
+            <tbody>
+                <tr>
+                    <th>State Abbr.</th>
+                    <th>State Name</th>
+                    <th>Capital</th>
+                    <th>Population</th>
+                </tr>
+                <tr>
+                    <td>AL</td>
+                    <td>Alabama</td>
+                    <td>Montgomery</td>
+                    <td>4,887,871</td>
+                </tr>
+                <tr>
+                    <td>AK</td>
+                    <td>Alaska</td>
+                    <td>Juneau</td>
+                    <td>737,438</td>
+                </tr>
+                <tr>
+                    <td>AZ</td>
+                    <td>Arizona</td>
+                    <td>Phoenix</td>
+                    <td>7,171,646</td>
+                </tr>
+                <tr>
+                    <td>AR</td>
+                    <td>Arkansas</td>
+                    <td>Little Rock</td>
+                    <td>3,010,825</td>
+                </tr>
+                <tr>
+                    <td>CA</td>
+                    <td>California</td>
+                    <td>Sacramento</td>
+                    <td>39,557,045</td>
+                </tr>
+                <tr>
+                    <td>CO</td>
+                    <td>Colorado</td>
+                    <td>Denver</td>
+                    <td>5,694,564</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Enter a state<br>(abbreviation or full, upper or lowercase)</h4>
+        <br>
+        <form name="census">
+            <input type="text" name="inputState" autofocus>
+            <input type="button" value="State Info" name="search" id="search" onclick="stateinfo();">
+            <input type="reset" value="Reset" onclick="window.location.reload();">
+            <br>
+            <br>
+            Results:<br>
+            <textarea rows="7" cols="50" name="result" readonly></textarea>
+        </form>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

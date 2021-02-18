@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW7 Part 2">
+    <title>HW7.2 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <style>
+        li {
+            margin: 0;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+            min-width: 750px;
+        }
+        .navigation {
+            margin: 0 auto;
+        }
+
+        .navigation li {
+                float: left;
+                width: 120px;
+                position: relative;
+        }
+
+        .navigation li a {
+                background: lavender;
+                padding: 5px;
+                display: block;
+        }
+
+        .navigation ul {
+                position: absolute;
+        }
+
+        .navigation ul a {
+                padding: 10px;
+        }
+
+        .navigation ul a:hover {
+                color: white;
+                background-color: black;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.navigation li').hover(
+            function () {
+                $('ul', this).fadeIn();
+            },
+            function () {
+                $('ul', this).fadeOut();
+            }
+            );
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 7: Part Two</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw7.html">HW7</a></td>
+                <td><a href="hw7a.html">Part 1</a></td>
+                <td><a href="hw7b.html">Part 2</a></td>
+            </tr>
+        </table>
+    </header>
+    <div class="container">
+            <ul class="navigation">
+                <li>
+                    <a href="index.html">HW1</a>
+                </li>
+                <li>
+                    <a href="hw2.html">HW2</a>
+                    <ul style="display: none">
+                        <li>
+                            <a href="hw2a.html">Part 1</a>
+                        </li>
+                        <li>
+                            <a href="hw2b.html">Part 2</a>
+                        </li>
+                        <li>
+                            <a href="hw2c.html">Part 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="hw3.html">HW3</a>
+                    <ul style="display: none">
+                        <li>
+                            <a href="hw3a.html">Part 1</a>
+                        </li>
+                        <li>
+                            <a href="hw3b.html">Part 2</a>
+                        </li>
+                        <li>
+                            <a href="hw3c.html">Part 3</a>
+                        </li>
+                        <li>
+                            <a href="hw3d.html">Part 4</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="hw4.html">HW4</a>
+                    <ul style="display: none">
+                        <li>
+                            <a href="hw4a.html">Part 1</a>
+                        </li>
+                        <li>
+                            <a href="hw4b.html">Part 2</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="hw5.html">HW5</a>
+                    <ul style="display: none">
+                        <li>
+                            <a href="hw5a.html">Part 1</a>
+                        </li>
+                        <li>
+                            <a href="hw5b.html">Part 2</a>
+                        </li>
+                        <li>
+                            <a href="hw5c.html">Part 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="hw6.html">HW6</a>
+                    <ul style="display: none">
+                        <li>
+                            <a href="hw6a.html">Part 1</a>
+                        </li>
+                        <li>
+                            <a href="hw6b.html">Part 2</a>
+                        </li>
+                        <li>
+                            <a href="hw6c.html">Part 3</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Write a script that displays a top navigation bar containing a link to your Homework 1 and five other links that will be to the cover page for each of your Homework2 - Homework6. When you mouseover on any of these other links then display a drop-down menu that contains the links of their homework parts (part 1, part 2, etc.).
+                <br><br>
+                <span class="sol">Solution:</span> See above.
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

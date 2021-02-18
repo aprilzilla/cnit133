@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW8">
+    <title>HW8 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script>
+        function showHint(str) {
+          if (str.length == 0) { 
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+          } 
+            else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+              }
+            }
+            xmlhttp.open("GET", "gethint.php?q="+str, true);
+            xmlhttp.send();
+          }
+        }
+</script>
+</head>
+<body>
+    <header>
+        <h1>CNIT 133 Homework 8<br>Ajax + PHP</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw8.html">HW8</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Recreate the 'gethint' Ajax example from W3Schools. Use the php file containing the hints and expand them to include several more names as hints (at least 10 more names).
+                <br><br>
+                <span class="sol">Solution:</span>
+                </td>
+            </tr>
+        </table>
+        <p>Type a name in the input field below:</p>
+        <form>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" onkeyup="showHint(this.value)">
+        </form> 
+        <p>Suggestions: <span id="txtHint"></span></p>
+        <br>
+        <br>
+        <h3>REST API example:</h3>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td>
+                    <a href="https://newsapi.org" target="_blank">News API</a>
+                    <p>If you click the link above it brings you to the documentation for a News API. You do need a key to access the API, but it is free, just simply sign-up for one. The response format is JSON.
+                    <br>
+                    <br>
+                    This API is best used to build a program that shows users top new headlines. News API searches articles from over 50,000 worldwide sources! Not only is it super fast, it's free for developers to use, and it's easy to integrate.
+                    </p>
+                </td>
+            </tr>
+        </table>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

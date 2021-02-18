@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW4 Part 2">
+    <title>HW4.2 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Homework 4: Part Two</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw4.html">HW4</a></td>
+                <td><a href="hw4a.html">Part 1</a></td>
+                <td><a href="hw4b.html">Part 2</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Create a webpage that contains a script that will calculate compound interest on a principal of $1000 for interest rates of 5, 6, and 7%, for years 1 through 10. Output in table format the year followed by the total amount calculated for each of the interest rates of 5% - 7%. 
+                <br><br>
+                <span class="sol">Solution:</span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <script>
+            var year, principal, rate, amount;
+            
+            principal = 1000;
+                {
+                document.write("<table class='parts interest'><tr><th>Year</th><th>Amount</th><th>Interest Rate</th></tr>")
+            
+                for(year = 1; year < 11; year++)
+                    { 
+                        rate = .05;
+                        amount = principal * ( 1 + rate ) ** year;
+
+                        document.write( "<tr><td>" + year + "</td>" );
+                        document.write( "<td>" + amount.toFixed(2) + "</td>" );
+                        document.write( "<td>" + rate + "</td>" );
+                }
+             }
+            
+                {
+                document.write("<tr><th>Year</th><th>Amount</th><th>Interest Rate</th></tr>")
+            
+                for(year = 1; year < 11; year++)
+                    { 
+                        rate = .06;
+                        amount = principal * ( 1 + rate ) ** year;
+
+                        document.write( "<tr><td>" + year + "</td>" );
+                        document.write( "<td>" + amount.toFixed(2) + "</td>" );
+                        document.write( "<td>" + rate + "</td>" );
+                }
+             }
+            
+                {
+                document.write("<tr><th>Year</th><th>Amount</th><th>Interest Rate</th></tr>")
+            
+                for(year = 1; year < 11; year++)
+                    { 
+                        rate = .07;
+                        amount = principal * ( 1 + rate ) ** year;
+
+                        document.write( "<tr><td>" + year + "</td>" );
+                        document.write( "<td>" + amount.toFixed(2) + "</td>" );
+                        document.write( "<td>" + rate + "</td>" );
+                }
+                document.write("</table>")
+             }
+        </script>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

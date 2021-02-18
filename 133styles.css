@@ -1,0 +1,81 @@
+body {
+    background-color: pink;
+    text-align: center;
+    font-family: 'Gelasio', serif;
+    font-weight: 400;
+    margin: 50px;
+}
+h1 {
+    font-weight: 700;
+    text-decoration: underline;
+}
+h3 {
+    color: white;
+    margin: -5px 0 -15px 0;
+}
+header p {
+    color: white;
+}
+h4 {
+    margin: 75px 0 0 0;
+    text-decoration: underline;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    text-align: center;
+    margin: 25px 0 0 -35px;
+}
+a {
+    text-decoration: none;
+    color: purple;
+}
+.home a:hover {
+    color: pink;
+    background-color: white;
+    padding: 10px;
+}
+tr, td {
+    border: 3px solid pink;
+    padding: 12px;
+    text-align: justify;
+    max-width: 350px;
+    background-color: white;
+}
+.parts {
+    margin: 0 auto;
+}
+td a:hover {
+    color: white;
+    background-color: pink;
+}
+footer p {
+    margin-top: 100px;
+}
+.nav tr, td {
+    padding: 5px 15px;
+}
+.linknostyle a {
+    color: black;
+}
+.linknostyle a:hover {
+    color: black;
+    background-color: white;
+    padding: 0;
+}
+.space td {
+    border: 6px solid pink;
+    padding: 15px;
+}
+.sol {
+    background-color: yellow;
+}
+.numbers input {
+    text-align: right;
+}
+
+.interest th {
+    background-color: darkred;
+    color: white;
+}

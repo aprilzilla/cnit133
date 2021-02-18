@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW5 Part 2">
+    <title>HW5.2 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script>
+    function on_Change() {
+        var sfnews = form1.changeurls.options[form1.changeurls.selectedIndex].value;
+        window.location = sfnews;
+    }
+    
+    function on_Click() {
+        var lanews = form2.clickurls.options[form2.clickurls.selectedIndex].value;
+        window.location = lanews;
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 5: Part Two</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw5.html">HW5</a></td>
+                <td><a href="hw5a.html">Part 1</a></td>
+                <td><a href="hw5b.html">Part 2</a></td>
+                <td><a href="hw5c.html">Part 3</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Create a webpage that contains a script that utilizes 2 pulldown menus. The first one should utilize an onchange event handler. The second should utilize a button with an onclick event handler to navigate to a page after an option is selected. Each pulldown menu should include at least 3 URL destinations. 
+                <br><br>
+                <span class="sol">Solution:</span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <h5>Pulldown Menu as Navigation Elements</h5>
+        <h5>Select for San Francisco News<br>(onchange event)</h5>
+        <form name="form1">
+            <select name="changeurls" onchange="on_Change();">
+                <option>--Choose Your News--</option>
+                <option value="https://www.sfexaminer.com">SF Examiner</option>
+                <option value="https://www.sfchronicle.com">SF Chronicle</option>
+                <option value="https://www.sfweekly.com">SF Weekly</option>
+            </select>
+        </form>
+        <h5>Select for Los Angeles News<br>(onclick event)</h5>
+        <form name="form2">
+            <select name="clickurls">
+                <option>--Choose Your News--</option>
+                <option value="https://www.latimes.com">LA Times</option>
+                <option value="https://www.dailynews.com">LA Daily News</option>
+                <option value="https://www.laweekly.com">LA Weekly</option>
+            </select>
+            <input type="button" value="Go!" onclick="on_Click();">
+        </form>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

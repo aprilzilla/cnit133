@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW7 Part 1">
+    <title>HW7.1 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <style>
+        #sampleText {
+            border: 2px dotted black;
+            padding: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function () {
+            
+            $("#attributeTable :radio").click(function () {
+                $("#sampleText").css($(this).attr("name"), $(this).val());
+            });
+
+            $("#fontSize").change(function () {
+                $("#sampleText").css($(this).attr("name"), $(this).val());
+            });
+
+            $("#attributeTable :checkbox").change(function () {
+                $("#sampleText").css($(this).attr("name"), this.checked ? $(this).val() : "");
+            });
+
+            $("#resetAll").click(function () {
+                $("#attributeTable [checked]").click();
+                $("#fontSize").val("");
+                $("#attributeTable :checked").click();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 7: Part One</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw7.html">HW7</a></td>
+                <td><a href="hw7a.html">Part 1</a></td>
+                <td><a href="hw7b.html">Part 2</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Create a webpage in which users are allowed to select a page layout and formatting through the use of the className property. Choose at least three form elements such as: radio buttons, select items, checkboxes, and buttons to allow the user to change some CSS property of the page such as: background color, font size, font family, font style, and font weight.
+                <br><br>
+                <span class="sol">Solution:</span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <form id="attributeForm">
+            <table id="attributeTable" class="parts space">
+                <tbody>
+                    <tr>
+                    <td>
+                        <span class="sol">Font Color:</span>
+                        <br>
+                        <label>
+                            <input type="radio" name="color" value="Green" id="green">
+                            Green
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="color" value="Red" id="red">
+                            Red
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="color" value="Blue" id="blue">
+                            Blue
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="color" value id="fontColorDefault" checked>
+                            Default
+                        </label>
+                        <br>
+                    </td>
+                    <td>
+                        <span class="sol">Font Size:</span>
+                        <br>
+                        <label for="fontSize">(Select One)</label>
+                        <br>
+                        <br>
+                        <select name="font-size" id="fontSize">
+                            <option value="70%">70%</option>
+                            <option value="90%">90%</option>
+                            <option value="110%">110%</option>
+                            <option value="" selected>Default</option>
+                        </select>
+                    </td>
+                    <td>
+                        <span class="sol">Attributes:</span>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="font-weight" value="bold" id="boldCheck">
+                            Bold
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="font-style" value="italic" id="italicCheck">
+                            Italic
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="text-decoration" value="underline" id="underlineCheck">
+                            Underline
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="text-transform" value="uppercase" id="upperCheck">
+                            Uppercase
+                        </label>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button type="button" id="resetAll">Reset Everything</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <table class="parts space">
+            <tbody>
+                <tr>
+                    <td>
+                        <div id="sampleText" style>
+                        <h2>Here is a Sample Header</h2>
+                        <p>This is a sample of text that reflects the above selections, go ahead and play around with the styles to pick what you like.</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

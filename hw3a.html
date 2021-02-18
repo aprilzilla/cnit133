@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW3 Part 1">
+    <title>HW3.1 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script>
+        function process() {
+            var hw, me, fe, pa, hwP, meP, feP, paP, grade;
+            
+            hw = document.getElementById("hwavg").value;
+            me = document.getElementById("mid").value;
+            fe = document.getElementById("fexam").value;
+            pa = document.getElementById("partic").value;
+            
+            if ( Number.isNaN(hw) || Number.isNaN(me) || Number.isNaN(fe) || Number.isNaN(pa) || 
+                hw=="" || me=="" || fe=="" || pa=="" || 
+                hw > 100 || hw < 0 || me > 100 || me < 0 || 
+                fe < 0 || fe > 100 || pa < 0 || pa > 100 )
+                    alert("Invalid Average or Score Entered\nInput must be between 0 and 100");
+            else {
+                hwP = parseInt( hw );
+                meP = parseInt( me );
+                feP = parseInt( fe );
+                paP = parseInt( pa );
+                
+                grade = (.5 * hwP) + (.2 * meP) + (.2 * feP) + (.1 * paP);
+                
+                switch(true) {
+                    case (grade >= 90):
+                        document.getElementById("results").value = ("The final average is " + Math.round( grade ) + "\nThe final grade is A\nExcellent Work!")
+                        break;
+                    case (grade >= 80):
+                        document.getElementById("results").value = ("The final average is " + Math.round( grade ) + "\nThe final grade is B\nGood Work!")
+                        break;
+                    case (grade >= 70):
+                        document.getElementById("results").value = ("The final average is " + Math.round( grade ) + "\nThe final grade is C\nAverage Work!")
+                        break;
+                    case (grade >= 60):
+                        document.getElementById("results").value = ("The final average is " + Math.round( grade ) + "\nThe final grade is D\nPoor Work!\nStudent must retake the course.")
+                        break;
+                    default:
+                        document.getElementById("results").value = ("The final average is " + Math.round( grade ) + "\nThe final grade is F\nFailing work!\nStudent must retake the course.")
+                }
+            }
+        }
+        
+        function res()
+        {
+            document.getElementById("results").value = "";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 3: Part One</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw3.html">HW3</a></td>
+                <td><a href="hw3a.html">Part 1</a></td>
+                <td><a href="hw3b.html">Part 2</a></td>
+                <td><a href="hw3c.html">Part 3</a></td>
+                <td><a href="hw3d.html">Part 4</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Create a webpage that contains the heading, Student Grades, and inputs a student's homework average, mid-term exam score, final exam score, and participation. Create a script that checks for valid input, i.e., that the input is between 0-100 and that, of course, the input are all numbers. If all input is valid then calculate and display the student's final average according to the formula: <br><br>
+                    
+                    final average = (.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * participation)
+                <br><br>
+                <span class="sol">Solution:</span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <h3>Student Grades</h3>
+        <br>
+        <form id="myform" name="myform">
+            <table class="parts">
+                <tbody>
+                    <tr>
+                        <td>Homework Average:</td>
+                        <td><input type="number" id="hwavg"></td>
+                    </tr>
+                    <tr>
+                        <td>Midterm Score:</td>
+                        <td><input type="number" id="mid"></td>
+                    </tr>
+                    <tr>
+                        <td>Final Exam Score:</td>
+                        <td><input type="number" id="fexam"></td>
+                    </tr>
+                    <tr>
+                        <td>Participation:</td>
+                        <td><input type="number" id="partic"></td>
+                    </tr>
+                    <tr><td></td>
+                    <td>
+                        <input type="button" value="Submit" onclick="process();">
+                        <input type="reset" value="Reset" onclick="res()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Final Grade:
+                    </td>
+                    <td><textarea rows="7" cols="20" id="results" name="results" readonly></textarea></td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+        </form>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>

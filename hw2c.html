@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HW2 Part 3">
+    <title>HW2.3 Robertson</title>
+        <!--April Robertson
+            CNIT 133
+            Spring 2020-->
+    
+    <link rel="stylesheet" href="133styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+    <script>
+        function process()
+            {
+
+                var number1, number2, number3, number4, number5, n1, n2, n3, n4, n5, positive = 0, negative = 0, zero = 0;
+                
+                number1 = document.forms["myform"].elements["num1"].value;
+                number2 = document.forms["myform"].elements["num2"].value;
+                number3 = document.forms["myform"].elements["num3"].value;
+                number4 = document.forms["myform"].elements["num4"].value;
+                number5 = document.forms["myform"].elements["num5"].value;
+                
+                if ( number1=="" || number2=="" || number3=="" || number4=="" || number5=="" ) {
+                        alert("Input must be numeric. Please fill in all boxes.");
+                }
+                else {        
+                n1 = parseInt(number1);
+                n2 = parseInt(number2);
+                n3 = parseInt(number3);
+                n4 = parseInt(number4);
+                n5 = parseInt(number5);
+                
+                if ( n1 < 0 )
+                    negative = negative + 1;
+                if ( n1 > 0 )
+                    positive = positive + 1;
+                if ( n2 < 0 )
+                    negative = negative + 1;
+                if ( n2 > 0 )
+                    positive = positive + 1;
+                if ( n3 < 0 )
+                    negative = negative + 1;
+                if ( n3 > 0 )
+                    positive = positive + 1;
+                if ( n4 < 0 )
+                    negative = negative + 1;
+                if ( n4 > 0 )
+                    positive = positive + 1;
+                if ( n5 < 0 )
+                    negative = negative + 1;
+                if ( n5 > 0 )
+                    positive = positive + 1;
+                    
+                if ( n1 == 0 )
+                    zero = zero + 1;
+                if ( n2 == 0 )
+                    zero = zero + 1;
+                if ( n3 == 0 )
+                    zero = zero + 1;
+                if ( n4 == 0 )
+                    zero = zero + 1;
+                if ( n5 == 0 )
+                    zero = zero + 1;
+                 
+                document.getElementById("result").value = ("The number of positive numbers were " + positive +
+                "\nThe number of negative numbers were " + negative +
+                "\nThe number of zeros were " + zero)
+        }
+       }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Homework 2: Part Three</h1>
+        <table class="parts nav">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="hw2.html">HW2</a></td>
+                <td><a href="hw2a.html">Part 1</a></td>
+                <td><a href="hw2b.html">Part 2</a></td>
+                <td><a href="hw2c.html">Part 3</a></td>
+            </tr>
+        </table>
+    </header>
+        <br>
+        <table class="parts space">
+            <tr>
+                <td><span class="sol">Prompt:</span> Create a webpage that contains a script that inputs 5 numbers and determines and displays the count of the negative numbers, the number of positive numbers, and the number of zeros. Use input boxes in a form for the input numbers. Your results should be displayed using a form textarea or a div element.
+                <br><br>
+                <span class="sol">Solution:</span></td>
+            </tr>
+        </table>
+        <br>
+        <form id="myform" name="myform">
+            <table class="parts">
+                <tr>
+                    <td>1st Number:</td>
+                    <td>
+                        <input type="number" name="num1" id="num1" autofocus>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2nd Number:</td>
+                    <td>
+                        <input type="number" name="num2" id="num2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3rd Number:</td>
+                    <td>
+                        <input type="number" name="num3" id="num3">
+                    </td>
+                </tr>
+                <tr>
+                    <td>4th Number:</td>
+                    <td>
+                        <input type="number" name="num4" id="num4">
+                    </td>
+                </tr>
+                <tr>
+                    <td>5th Number:</td>
+                    <td>
+                        <input type="number" name="num5" id="num5">
+                    </td>
+                </tr>
+                <tr><td></td>
+                    <td>
+                        <input type="button" onclick="process()" value="SUBMIT">
+                        <input type="reset" value="RESET" onclick="document.getElementById('num1').focus();">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Results:
+                    </td>
+                    <td><textarea rows="7" cols="40" id="result" name="result" readonly></textarea></td>
+                </tr>
+            </table>
+        </form>
+    <footer>
+        <p><a href="index.html">home</a></p>
+    </footer>
+</body>
+</html>
